@@ -12,7 +12,7 @@ together with CUDA.
       * [Images](#images)
          * [py-cuda](#py-cuda)
 
-<!-- Added by: jose, at: Sun Feb 21 18:15:07 CET 2021 -->
+<!-- Added by: jose, at: Sun Feb 21 18:16:24 CET 2021 -->
 
 <!--te-->
 

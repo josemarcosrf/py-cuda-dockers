@@ -25,5 +25,3 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
 RUN echo 'alias python="/usr/bin/python3.6"' >> /root/.bashrc && \
     echo 'alias pip="/usr/bin/pip3"' >> /root/.bashrc
 
-
-WORKDIR /app
