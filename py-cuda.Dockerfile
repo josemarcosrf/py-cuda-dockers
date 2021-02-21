@@ -21,7 +21,6 @@ RUN add-apt-repository ppa:deadsnakes/ppa && \
     && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Create aliases to the specific python version
-RUN echo 'alias python="/usr/bin/python3.6"' >> /root/.bashrc && \
-    echo 'alias pip="/usr/bin/pip3"' >> /root/.bashrc
-
+# symlinks to the specific python version
+RUN ln -s /usr/bin/python3.6 /usr/bin/python && \
+    ln -s /usr/bin/pip3 /usr/bin/pip
