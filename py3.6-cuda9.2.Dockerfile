@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0-base
+FROM nvidia/cuda:9.2-base
 
 CMD nvidia-smi
 
@@ -12,6 +12,7 @@ RUN apt-get update -qq && \
     software-properties-common \
     curl \
     git \
+    gcc \
     wget
 
 # Install python 3.6 (we first need 'software-properties-common' or the ppa)

@@ -33,12 +33,11 @@ readme-toc:
 	find . -name README.md -exec gh-md-toc --insert {} \;
 
 build-docker:
-	bash ./scripts/build-docker.sh
+	bash ./scripts/build-docker.sh $(py) $(cuda)
 
 run-interactive:
-	docker run -it --rm --gpus all jmrf/py-cuda:11.0-py36 /bin/bash
+	docker run -it --rm --gpus all jmrf/py-cuda:$(cuda)-py$(py) /bin/bash
 
 publish:
-	docker push jmrf/py-cuda:11.0-py36
+	docker push jmrf/py-cuda:$(cuda)-py$(py)
 
-all: readme-toc clean build-docker publish

@@ -33,8 +33,28 @@ if [ "$current_dir" == "scripts" ]; then
     exit
 fi
 
+PY_VERSION=$1
+if [ -z "$PY_VERSION" ]
+  then
+    say @red[["Please pass the PY_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
+    exit 1;
+fi
 
-# build docker file:
-docker build --rm \
-    -t jmrf/py-cuda:11.0-py36 \
-    -f py-cuda.Dockerfile .
+CUDA_VERSION=$2
+if [ -z "$CUDA_VERSION" ]
+  then
+    say @red[["Please pass the CUDA_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
+    exit 1;
+fi
+
+
+DOCKER_FILE=py$PY_VERSION-cuda$CUDA_VERSION.Dockerfile
+if [ -f $DOCKER_FILE ]; then
+
+    # build docker file:
+    docker build --rm \
+        -t jmrf/py-cuda:$CUDA_VERSION-py$PY_VERSION \
+        -f $DOCKER_FILE .
+else
+    say @red[["$DOCKER_FILE doesn't exist. Correct python and CUDA versions?"]]
+fi
