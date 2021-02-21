@@ -16,18 +16,25 @@ say() {
 }
 
 
+DEFAULT_PY_VERSION=3.6
+DEFAULT_CUDA_VERSION=11.0
+
 PY_VERSION=$1
 if [ -z "$PY_VERSION" ]
   then
-    say @red[["Please pass the PY_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
-    exit 1;
+    say @yellow[["PY_VERSION not specified. Using default PY_VERSION=$DEFAULT_PY_VERSION"]]
+    say @blue[["You can pass the PY_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
+    PY_VERSION=$DEFAULT_PY_VERSION
+    # exit 1;
 fi
 
 CUDA_VERSION=$2
 if [ -z "$CUDA_VERSION" ]
   then
-    say @red[["Please pass the CUDA_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
-    exit 1;
+    say @yellow[["CUDA_VERSION not specified. Using default CUDA_VERSION=$DEFAULT_CUDA_VERSION"]]
+    say @blue[[" You can pass the CUDA_VERSION to the script. i.e.: build_doker.sh 3.6 11.0"]]
+    CUDA_VERSION=$DEFAULT_CUDA_VERSION
+    # exit 1;
 fi
 
 

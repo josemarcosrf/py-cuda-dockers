@@ -36,7 +36,7 @@ build-docker:
 	bash ./scripts/build-docker.sh $(py) $(cuda)
 
 run-interactive:
-	docker run -it --rm --gpus all jmrf/py-cuda:$(cuda)-py$(py) /bin/bash
+	bash ./scripts/run-docker.sh $(py) $(cuda)
 
 publish:
 	docker push jmrf/py-cuda:$(cuda)-py$(py)

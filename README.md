@@ -15,7 +15,7 @@ together with CUDA.
       * [Run interactive](#run-interactive)
       * [Publish](#publish)
 
-<!-- Added by: jose, at: Sun Feb 21 19:30:06 CET 2021 -->
+<!-- Added by: jose, at: Sun Feb 21 22:52:34 CET 2021 -->
 
 <!--te-->
 
