@@ -31,22 +31,23 @@ together with CUDA.
 
  * `9.2-py3.6` CUDA 9.2 and python 3.6 base image
  * `11.0-py3.6` CUDA 11 and python 3.6 base image
+ * `11.0-py3.8` CUDA 11 and python 3.8 base image
 
 
 ## Build
 
 ```bash
-    make build-docker py=3.6 cuda=9.2
+make build-docker py=3.8 cuda=11.0
 ```
 
 ## Run interactive
 
 ```bash
-    make run-interactive py=3.6 cuda=9.2
+make run-interactive py=3.8 cuda=11.0
 ```
 
 ## Publish
 
 ```bash
-    make publish py=3.6 cuda=9.2
+make publish py=3.8 cuda=11.0
 ```
